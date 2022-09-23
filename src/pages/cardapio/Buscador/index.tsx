@@ -11,6 +11,7 @@ export default function Buscador({busca, setBusca}: IProps){
       <input
         value={busca}
         onChange={evento => setBusca(evento.target.value)}
+        placeholder='Buscar'
       />
     </div>
   )
