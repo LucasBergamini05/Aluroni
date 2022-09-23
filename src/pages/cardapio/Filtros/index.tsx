@@ -1,24 +1,40 @@
 import filtros from './filtros.json'
 import styles from './Filtros.module.scss'
+import className from 'classnames'
 
 interface IFiltro{
   label: string;
-  id: number
+  id: number;
 }
 
-export default function Filtros(){
+interface IProps{
+  filtroSelecionado: number | null;
+  setFiltro: React.Dispatch<React.SetStateAction<number | null>>;
+}
 
-  function selecionarFiltro(filtro: IFiltro){}
+export default function Filtros( {filtroSelecionado, setFiltro}: IProps ){
+
+  function selecionarFiltro(filtro: IFiltro){
+    if(filtroSelecionado === filtro.id){
+      return setFiltro(null);
+    }
+    setFiltro(filtro.id);
+    console.log(filtroSelecionado)
+  }
 
   return(
     <div className={styles.filtros}>
-      {filtros.map(filtro => {
-        return(
-          <button className={styles.filtros__filtro} key={filtro.id} onClick={() => selecionarFiltro(filtro)}>
+      {filtros.map(filtro => (
+          <button className={className({
+            [styles.filtros__filtro]: true,
+            [styles["filtros__filtro--ativo"]]: filtro.id === filtroSelecionado
+          })}
+          key={filtro.id}
+          onClick={() => selecionarFiltro(filtro)}>
             {filtro.label}
           </button>
         )
-      })}
+      )}
     </div>
   )
 }
