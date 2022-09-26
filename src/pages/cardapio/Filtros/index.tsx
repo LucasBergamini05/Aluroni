@@ -1,6 +1,6 @@
-import filtros from './filtros.json'
-import styles from './Filtros.module.scss'
-import className from 'classnames'
+import filtros from './filtros.json';
+import styles from './Filtros.module.scss';
+import className from 'classnames';
 
 interface IFiltro{
   label: string;
@@ -19,7 +19,6 @@ export default function Filtros( {filtroSelecionado, setFiltro}: IProps ){
       return setFiltro(null);
     }
     setFiltro(filtro.id);
-    console.log(filtroSelecionado)
   }
 
   return(

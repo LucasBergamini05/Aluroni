@@ -1,4 +1,4 @@
-import styles from './Buscador.module.scss'
+import styles from './Buscador.module.scss';
 
 interface IProps{
   busca: string,
