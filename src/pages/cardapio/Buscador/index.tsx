@@ -1,4 +1,5 @@
 import styles from './Buscador.module.scss';
+import { CgSearch } from 'react-icons/cg'
 
 interface IProps{
   busca: string,
@@ -13,6 +14,7 @@ export default function Buscador({busca, setBusca}: IProps){
         onChange={evento => setBusca(evento.target.value)}
         placeholder='Buscar'
       />
+      <CgSearch size={35} color="#4C4D5E"/>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import styles from './Ordenador.module.scss';
 import opcoes from './opcoes.json';
 import { useState } from 'react';
 import classNames from 'classnames';
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 interface IProps {
   ordenador: string;
@@ -18,10 +19,16 @@ export default function Ordenador({ ordenador, setOrdenador }: IProps){
     onClick={ ()=> setAberto(!aberto) } 
     onBlur={ ()=> setAberto(false) }>
       <span> { ordenador ? nomeOrdenador : 'Ordenar Por'} </span>
+      
+      {aberto ? 
+        (<MdKeyboardArrowUp size={25}/>) :
+        (<MdKeyboardArrowDown size={25}/>)
+      }
+
       <div className={ classNames({
-        [styles.ordenador__options]: true,
-        [styles['ordenador__options--ativo']]: aberto
-      })}>
+      [styles.ordenador__options]: true,
+      [styles['ordenador__options--ativo']]: aberto})}>
+
         {opcoes.map(opcao => (
           <div 
           className={ styles.ordenador__option } 
@@ -30,6 +37,7 @@ export default function Ordenador({ ordenador, setOrdenador }: IProps){
             { opcao.nome }
           </div>
         ))}
+
       </div>
     </button>
   )
