@@ -10,7 +10,7 @@ export default function Item(props: Props) {
   return(
     <div className={ styles.item }>
       <div className= {styles.item__imagem }>
-        <img src={ logo } alt="logo"/>
+        <img src={ props.photo } alt="logo"/>
       </div>
       <div className={ styles.item__descricao }>
         <div className={ styles.item__titulo }>
