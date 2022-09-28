@@ -8,29 +8,29 @@ interface IFiltro{
 }
 
 interface IProps{
-  filtroSelecionado: number | null;
+  filtro: number | null;
   setFiltro: React.Dispatch<React.SetStateAction<number | null>>;
 }
 
-export default function Filtros( {filtroSelecionado, setFiltro}: IProps ){
+export default function Filtros( {filtro, setFiltro}: IProps ){
 
-  function selecionarFiltro(filtro: IFiltro){
-    if(filtroSelecionado === filtro.id){
+  function selecionarFiltro(filtroSelecionado: IFiltro){
+    if(filtro === filtroSelecionado.id){
       return setFiltro(null);
     }
-    setFiltro(filtro.id);
+    setFiltro(filtroSelecionado.id);
   }
 
   return(
     <div className={styles.filtros}>
-      {filtros.map(filtro => (
+      {filtros.map(filtroSelecionado => (
           <button className={className({
             [styles.filtros__filtro]: true,
-            [styles["filtros__filtro--ativo"]]: filtro.id === filtroSelecionado
+            [styles["filtros__filtro--ativo"]]: filtroSelecionado.id === filtro
           })}
-          key={filtro.id}
-          onClick={() => selecionarFiltro(filtro)}>
-            {filtro.label}
+          key={filtroSelecionado.id}
+          onClick={() => selecionarFiltro(filtroSelecionado)}>
+            {filtroSelecionado.label}
           </button>
         )
       )}
