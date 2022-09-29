@@ -24,16 +24,14 @@ export default function Filtros( {filtro, setFiltro}: IProps ){
   return(
     <div className={styles.filtros}>
       {filtros.map(filtroSelecionado => (
-          <button className={className({
-            [styles.filtros__filtro]: true,
-            [styles["filtros__filtro--ativo"]]: filtroSelecionado.id === filtro
-          })}
-          key={filtroSelecionado.id}
-          onClick={() => selecionarFiltro(filtroSelecionado)}>
-            {filtroSelecionado.label}
-          </button>
-        )
-      )}
+        <button className={className({
+          [styles.filtros__filtro]: true,
+          [styles['filtros__filtro--ativo']]: filtroSelecionado.id === filtro
+        })}
+        key={filtroSelecionado.id}
+        onClick={() => selecionarFiltro(filtroSelecionado)}
+        > {filtroSelecionado.label} </button>
+      ))}
     </div>
-  )
+  );
 }

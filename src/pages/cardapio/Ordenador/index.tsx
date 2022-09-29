@@ -2,7 +2,7 @@ import styles from './Ordenador.module.scss';
 import opcoes from './opcoes.json';
 import { useState } from 'react';
 import classNames from 'classnames';
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 
 interface IProps {
   ordenador: string;
@@ -15,9 +15,9 @@ export default function Ordenador({ ordenador, setOrdenador }: IProps){
 
   return(
     <button 
-    className={ styles.ordenador }
-    onClick={ ()=> setAberto(!aberto) } 
-    onBlur={ ()=> setAberto(false) }>
+      className={ styles.ordenador }
+      onClick={ ()=> setAberto(!aberto) } 
+      onBlur={ ()=> setAberto(false) }>
       <span> { ordenador ? nomeOrdenador : 'Ordenar Por'} </span>
       
       {aberto ? 
@@ -26,19 +26,18 @@ export default function Ordenador({ ordenador, setOrdenador }: IProps){
       }
 
       <div className={ classNames({
-      [styles.ordenador__options]: true,
-      [styles['ordenador__options--ativo']]: aberto})}>
+        [styles.ordenador__options]: true,
+        [styles['ordenador__options--ativo']]: aberto})}>
 
         {opcoes.map(opcao => (
           <div 
-          className={ styles.ordenador__option } 
-          key={ opcao.value } 
-          onClick={ () => setOrdenador(opcao.value) }>
-            { opcao.nome }
-          </div>
+            className={ styles.ordenador__option } 
+            key={ opcao.value } 
+            onClick={ () => setOrdenador(opcao.value) }
+          >{ opcao.nome }</div>
         ))}
 
       </div>
     </button>
-  )
+  );
 }
