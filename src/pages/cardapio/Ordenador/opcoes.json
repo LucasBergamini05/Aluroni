@@ -4,15 +4,27 @@
     "value": ""
   },
   {
-    "nome": "Porção",
-    "value": "porcao"
+    "nome": "Porção ↑",
+    "value": "porcao-crescente"
   },
   {
-    "nome": "Qtd. pessoas",
-    "value": "qtd_pessoas"
+    "nome": "Porção ↓",
+    "value": "porcao-decrescente"
   },
   {
-    "nome": "Preço",
-    "value": "preco"
+    "nome": "Qtd. pessoas ↑",
+    "value": "qtd_pessoas-crescente"
+  },
+  {
+    "nome": "Qtd. pessoas ↓",
+    "value": "qtd_pessoas-decrescente"
+  },
+  {
+    "nome": "Preço ↑",
+    "value": "preco-crescente"
+  },
+  {
+    "nome": "Preço ↓",
+    "value": "preco-decrescente"
   }
 ]
