@@ -1,3 +1,4 @@
+import Main from 'components/Main';
 import Menu from 'components/Menu';
 import Cardapio from 'pages/cardapio';
 import Inicio from 'pages/inicio';
@@ -8,8 +9,10 @@ export default function AppRouter() {
     <Router>
       <Menu/>
       <Routes>
-        <Route path='/' element={<Inicio/>}/>
-        <Route path='/cardapio' element={<Cardapio/>}/>
+        <Route path='/' element={<Main/>}>
+          <Route index element={<Inicio/>} />
+          <Route path='cardapio' element={<Cardapio/>}/>
+        </Route>
       </Routes>
     </Router>
   );
