@@ -1,3 +1,4 @@
+import Footer from 'components/Footer';
 import Main from 'components/Main';
 import Menu from 'components/Menu';
 import Cardapio from 'pages/cardapio';
@@ -16,6 +17,7 @@ export default function AppRouter() {
           <Route path='sobre' element={<Sobre/>}/>
         </Route>
       </Routes>
+      <Footer/>
     </Router>
   );
 }
