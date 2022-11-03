@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Cardapio } from 'types/Prato';
 
 import cardapio from '../../../data/cardapio.json';
 import Item from './Item';
@@ -23,15 +24,15 @@ export default function Itens( { busca, filtro, ordenador }: IProps ){
     return true;
   }
 
-  function ordenacaoCrescente( lista: typeof cardapio, propriedade: 'size' | 'serving' | 'price' ){
+  function ordenacaoCrescente( lista: Cardapio, propriedade: 'size' | 'serving' | 'price' ){
     return lista.sort( (a, b)=> a[propriedade] > b[propriedade] ? 1 : -1 );
   }
 
-  function ordenacaoDecrescente( lista: typeof cardapio, propriedade: 'size' | 'serving' | 'price' ){
+  function ordenacaoDecrescente( lista: Cardapio, propriedade: 'size' | 'serving' | 'price' ){
     return lista.sort( (a, b)=> a[propriedade] > b[propriedade] ? -1 : 1 );
   }
 
-  function ordena(lista: typeof cardapio){
+  function ordena(lista: Cardapio){
     switch(ordenador.split('-')[0]){
     case 'porcao':
       return ordenador.split('-')[1] === 'crescente' ? ordenacaoCrescente(lista, 'size') : ordenacaoDecrescente(lista, 'size');
