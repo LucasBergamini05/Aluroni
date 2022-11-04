@@ -2,7 +2,7 @@ import styles from './Main.module.scss';
 import stylesTema from 'styles/Tema.module.scss';
 import { Outlet } from 'react-router-dom';
 
-export default function Main(){
+export default function Cabecalho(){
   return(
     <>
       <header className={ styles.header }>

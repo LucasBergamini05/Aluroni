@@ -3,7 +3,7 @@ import { Route, Routes, useNavigate, useParams } from 'react-router-dom';
 import cardapio from 'data/cardapio.json';
 import Tags from 'components/Tags';
 import NotFound from 'pages/notFound';
-import Main from 'components/Main';
+import Cabecalho from 'components/Cabecalho';
 
 export default function Prato(){
   const { id } = useParams();
@@ -14,7 +14,7 @@ export default function Prato(){
 
   return(
     <Routes>
-      <Route path='*' element={<Main/>}>
+      <Route path='*' element={<Cabecalho/>}>
         <Route index element={
           <>
             <button className={ styles.voltar } onClick={ () => navigate(-1) }>
