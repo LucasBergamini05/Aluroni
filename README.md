@@ -13,5 +13,3 @@ Página Cardápio
 
 Página Sobre
 ![image](https://user-images.githubusercontent.com/108429989/197273573-e0829a75-5d5e-46e1-8061-a28a27cece74.png)
-
-:construction:Em desenvolvimento:construction:
